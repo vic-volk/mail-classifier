@@ -1,16 +1,15 @@
 package owl;
 
-import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLNamedIndividual;
-import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
 import org.semanticweb.owlapi.reasoner.OWLReasoner;
+import org.semanticweb.owlapi.reasoner.impl.OWLClassNodeSet;
 import org.semanticweb.owlapi.util.CollectionFactory;
 import org.semanticweb.owlapi.util.ShortFormProvider;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -122,6 +121,17 @@ public class DLQueryEngine {
         OWLClassExpression classExpression = parser.parseClassExpression(classExpressionString);
         NodeSet<OWLNamedIndividual> individuals = reasoner.getInstances(classExpression, direct);
         return individuals.getFlattened();
+    }
+
+    @Nonnull
+    public Set<OWLClass> getDomains(@Nonnull String propertyExpressionString, boolean direct) {
+        if (propertyExpressionString.trim().isEmpty()) {
+            return CollectionFactory.emptySet();
+        }
+        List<OWLObjectPropertyExpression> propertyExpressions = parser.parsePropertyExpression(propertyExpressionString);
+        NodeSet<OWLClass> classes = new OWLClassNodeSet();
+        propertyExpressions.forEach(ps -> reasoner.getObjectPropertyDomains(ps, direct));
+        return classes.getFlattened();
     }
 }
 

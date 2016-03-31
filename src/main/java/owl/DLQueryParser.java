@@ -3,15 +3,14 @@ package owl;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
 import org.semanticweb.owlapi.expression.ShortFormEntityChecker;
-import org.semanticweb.owlapi.model.OWLClassExpression;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProvider;
 import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.semanticweb.owlapi.util.mansyntax.ManchesterOWLSyntaxParser;
 
 import javax.annotation.Nonnull;
+import java.util.List;
 import java.util.Set;
 
 public class DLQueryParser {
@@ -62,6 +61,20 @@ public class DLQueryParser {
         parser.setOWLEntityChecker(entityChecker);
         // Do the actual parsing
         return parser.parseClassExpression();
+    }
+
+    @Nonnull
+    public List<OWLObjectPropertyExpression> parsePropertyExpression(@Nonnull String propertyExpressionString) {
+        // Set up the real parser
+        ManchesterOWLSyntaxParser parser = OWLManager.createManchesterParser();
+        parser.setStringToParse(propertyExpressionString);
+        parser.setDefaultOntology(rootOntology);
+        // Specify an entity checker that wil be used to check a class
+        // expression contains the correct names.
+        OWLEntityChecker entityChecker = new ShortFormEntityChecker(bidiShortFormProvider);
+        parser.setOWLEntityChecker(entityChecker);
+        // Do the actual parsing
+        return parser.parseObjectPropertyChain();
     }
 }
 

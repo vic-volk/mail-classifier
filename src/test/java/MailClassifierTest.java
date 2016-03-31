@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class MailClassifierTest {
 
-    final String path = "src/main/resources/root-ontology.owx";
+    final String path = "src/main/owl/root-ontology.owx";
 
     @Test
     public void testOntologyLoading() throws OWLOntologyCreationException, IOException {
@@ -40,6 +40,7 @@ public class MailClassifierTest {
     public void testMailClassifier() throws OWLOntologyCreationException {
         OntologyBasedMailClassifier classifier = new OntologyBasedMailClassifier(getOntology());
         Mail mail = new Mail();
+        mail.setText("spam");
         String command = classifier.classify(mail);
     }
 
