@@ -2,6 +2,7 @@ package classifier;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import model.Mail;
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.model.*;
@@ -19,30 +20,32 @@ import java.util.stream.Collectors;
 
 import static com.google.common.collect.Lists.newArrayList;
 
-public class OntologyBasedMailClassifier implements MailClassifier {
+public class MailClassifierAgent implements MailClassifier {
 
     private OWLOntology ontology;
     private DLQueryEngine dlQueryEngine;
     private OWLOntologyManager manager;
     private OWLDataFactory factory;
     private OWLDataProperty hasText;
+    private OWLObjectProperty relatedTo;
 
     final private String prefix = "http://webprotege.stanford.edu/";
 
     private String ruleExpression = "mailClassifierRule";
-    private String relatedTo = "relatedTo";
+    private String relatedToName = "relatedTo";
 
-    public OntologyBasedMailClassifier(OWLOntology ontology) {
+    public MailClassifierAgent(OWLOntology ontology) {
         manager = OWLManager.createOWLOntologyManager();
         factory = manager.getOWLDataFactory();
         hasText = factory.getOWLDataProperty(IRI.create(prefix, "hasText"));
+        relatedTo = factory.getOWLObjectProperty(IRI.create(prefix, relatedToName));
         OWLReasoner reasoner = createReasoner(ontology);
         ShortFormProvider shortFormProvider = new SimpleShortFormProvider();
         dlQueryEngine = new DLQueryEngine(reasoner, shortFormProvider);
         this.ontology = ontology;
     }
 
-    public String classify(Mail mail) {
+    public List<String> classify(Mail mail) {
         //Get classification rules
         Set<OWLNamedIndividual> individuals = dlQueryEngine.getInstances(ruleExpression, true);
         Collection<OWLLiteral> rules = newArrayList();
@@ -52,17 +55,17 @@ public class OntologyBasedMailClassifier implements MailClassifier {
         individuals.forEach(i -> literalsMap.put(i, EntitySearcher.getDataPropertyValues(i, hasText, ontology)));
 
         //Determine mail by rules
-        List<OWLClass> mailTypes = Lists.newArrayList();
+        List<OWLIndividual> mailTypes = Lists.newArrayList();
         literalsMap
                 .forEach((k, lc) ->
                         lc.forEach(rule -> {
                             if (searchInText(rule.getLiteral(), mail.getText()))
-                                mailTypes.addAll(getMailType(k));
+                                mailTypes.addAll(EntitySearcher.getObjectPropertyValues(k, relatedTo, ontology));
                         }));
 
         //Invoke commands
-
-        return "test command";
+        mailTypes.forEach(this::invokeCommandByMailType);
+        return mailTypes.stream().map(OWLIndividual::toStringID).collect(Collectors.toList());
     }
 
     @Nonnull
@@ -80,11 +83,12 @@ public class OntologyBasedMailClassifier implements MailClassifier {
         return text.contains(rule);
     }
 
-    private Set<OWLClass> getMailType(OWLNamedIndividual rule) {
-        return dlQueryEngine.getDomains(relatedTo, true);
+    private Collection<OWLNamedIndividual> getMailType(OWLNamedIndividual individual, String property) {
+        return dlQueryEngine.getRelated(individual, property);
     }
 
-    private Set<OWLClass> getCommandByMailType(OWLClass mailType) {
-        return dlQueryEngine.getEquivalentClasses(relatedTo);
+    private Set<String> invokeCommandByMailType(OWLIndividual individual) {
+        System.out.println("Invoke command for: " + individual);
+        return Sets.newHashSet();
     }
 }

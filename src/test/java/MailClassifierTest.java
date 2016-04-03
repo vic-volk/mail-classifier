@@ -1,4 +1,4 @@
-import classifier.OntologyBasedMailClassifier;
+import classifier.MailClassifierAgent;
 import model.Mail;
 import org.junit.Test;
 import org.semanticweb.owlapi.apibinding.OWLManager;
@@ -13,6 +13,7 @@ import owl.DLQueryPrinter;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 public class MailClassifierTest {
 
@@ -38,10 +39,11 @@ public class MailClassifierTest {
 
     @Test
     public void testMailClassifier() throws OWLOntologyCreationException {
-        OntologyBasedMailClassifier classifier = new OntologyBasedMailClassifier(getOntology());
+        MailClassifierAgent classifier = new MailClassifierAgent(getOntology());
         Mail mail = new Mail();
-        mail.setText("spam");
-        String command = classifier.classify(mail);
+        mail.setText("test spam text");
+        List<String> mailTypes = classifier.classify(mail);
+        mailTypes.forEach(System.out::println);
     }
 
     private OWLOntology getOntology() throws OWLOntologyCreationException {

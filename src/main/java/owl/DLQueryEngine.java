@@ -1,5 +1,7 @@
 package owl;
 
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -124,14 +126,16 @@ public class DLQueryEngine {
     }
 
     @Nonnull
-    public Set<OWLClass> getDomains(@Nonnull String propertyExpressionString, boolean direct) {
+    public Set<OWLNamedIndividual> getRelated(OWLNamedIndividual individual, @Nonnull String propertyExpressionString) {
         if (propertyExpressionString.trim().isEmpty()) {
             return CollectionFactory.emptySet();
         }
-        List<OWLObjectPropertyExpression> propertyExpressions = parser.parsePropertyExpression(propertyExpressionString);
-        NodeSet<OWLClass> classes = new OWLClassNodeSet();
-        propertyExpressions.forEach(ps -> reasoner.getObjectPropertyDomains(ps, direct));
-        return classes.getFlattened();
+        List<OWLObjectPropertyExpression> propertyExpressions
+                = parser.parsePropertyExpression(propertyExpressionString);
+        Set<OWLNamedIndividual> individuals = Sets.newHashSet();
+        propertyExpressions.forEach(ps ->
+                individuals.addAll(reasoner.getObjectPropertyValues(individual, ps).getFlattened()));
+        return individuals;
     }
 }
 

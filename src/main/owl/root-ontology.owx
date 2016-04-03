@@ -6,111 +6,143 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://webprotege.stanford.edu/project/BiiyidbjteGAN3sWf5BbE8">
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="" IRI="http://webprotege.stanford.edu/project/BiiyidbjteGAN3sWf5BbE8"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/Command"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/normalMailClassifierRule"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/artifact"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/brandArtifact"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/invokeServiceCommand"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/mail"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/mailClassifierRule"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/normalMail"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/notClassifiedMail"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/rule"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/saveMailCommand"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/sendMailCommand"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/spamMail"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/suspiciousMail"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://webprotege.stanford.edu/tagArtifact"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://webprotege.stanford.edu/Rt4pHSzsOG0CCkKKmWoXO4"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://webprotege.stanford.edu/artifact"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://webprotege.stanford.edu/directory"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://webprotege.stanford.edu/hasDirectoryPath"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://webprotege.stanford.edu/R8f2I5213q4Z3IvdFg6pnq0"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://webprotege.stanford.edu/RBaqbM4HuPMYZOBF6YoCIBH"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://webprotege.stanford.edu/RCOKeXaSKSSbZrhGKJMdCe4"/>
+        <Class IRI="#httpQueryParameter"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="http://webprotege.stanford.edu/directory"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="http://webprotege.stanford.edu/hasText"/>
+        <Class IRI="http://webprotege.stanford.edu/saveMailCommand"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
-    </Declaration>
-    <Declaration>
-        <DataProperty IRI="http://webprotege.stanford.edu/tagName"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://webprotege.stanford.edu/coca-cola"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://webprotege.stanford.edu/createTicketCommand"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://webprotege.stanford.edu/normalMailClassifierRule"/>
-    </Declaration>
-    <Declaration>
-        <NamedIndividual IRI="http://webprotege.stanford.edu/pictureTag"/>
+        <Class IRI="http://webprotege.stanford.edu/artifact"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://webprotege.stanford.edu/saveSpamMailCommand"/>
     </Declaration>
     <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/invokeServiceCommand"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/tagName"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/createTicketCommand"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="http://webprotege.stanford.edu/spam"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/normalMail"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#serviceUrl"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#parameter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/mail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/suspiciousMail"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="http://webprotege.stanford.edu/spamMailClassifierRule"/>
     </Declaration>
     <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/tagArtifact"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#spamMail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/brandArtifact"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/Rt4pHSzsOG0CCkKKmWoXO4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#notClassifiedMail"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="http://webprotege.stanford.edu/urlTag"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/coca-cola"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/hasDirectoryPath"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/RCOKeXaSKSSbZrhGKJMdCe4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/rule"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#suspiciousMailClassifierRule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/Command"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#parameter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#ticketName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/hasText"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/sendMailCommand"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#suspiciousMail"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/RBaqbM4HuPMYZOBF6YoCIBH"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/artifact"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/spamMail"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/directory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/mailClassifierRule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/pictureTag"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#normalMail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/notClassifiedMail"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/R8f2I5213q4Z3IvdFg6pnq0"/>
     </Declaration>
     <SubClassOf>
         <Class IRI="http://webprotege.stanford.edu/Command"/>
@@ -175,19 +207,16 @@
         <Class IRI="http://webprotege.stanford.edu/tagArtifact"/>
         <Class IRI="http://webprotege.stanford.edu/artifact"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#httpQueryParameter"/>
+        <Class IRI="#parameter"/>
+    </SubClassOf>
     <ClassAssertion>
         <Class IRI="http://webprotege.stanford.edu/brandArtifact"/>
         <NamedIndividual IRI="http://webprotege.stanford.edu/coca-cola"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://webprotege.stanford.edu/invokeServiceCommand"/>
-        <NamedIndividual IRI="http://webprotege.stanford.edu/createTicketCommand"/>
-    </ClassAssertion>
-    <ClassAssertion>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
-            <Class IRI="http://webprotege.stanford.edu/normalMail"/>
-        </ObjectSomeValuesFrom>
         <NamedIndividual IRI="http://webprotege.stanford.edu/createTicketCommand"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -218,16 +247,72 @@
         <NamedIndividual IRI="http://webprotege.stanford.edu/spamMailClassifierRule"/>
     </ClassAssertion>
     <ClassAssertion>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
-            <Class IRI="http://webprotege.stanford.edu/normalMail"/>
-        </ObjectSomeValuesFrom>
-        <NamedIndividual IRI="http://webprotege.stanford.edu/spamMailClassifierRule"/>
-    </ClassAssertion>
-    <ClassAssertion>
         <Class IRI="http://webprotege.stanford.edu/tagArtifact"/>
         <NamedIndividual IRI="http://webprotege.stanford.edu/urlTag"/>
     </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/normalMail"/>
+        <NamedIndividual IRI="#normalMail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/notClassifiedMail"/>
+        <NamedIndividual IRI="#notClassifiedMail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual IRI="#parameter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/spamMail"/>
+        <NamedIndividual IRI="#spamMail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/suspiciousMail"/>
+        <NamedIndividual IRI="#suspiciousMail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://webprotege.stanford.edu/mailClassifierRule"/>
+        <NamedIndividual IRI="#suspiciousMailClassifierRule"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#httpQueryParameter"/>
+        <NamedIndividual IRI="#ticketName"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/createTicketCommand"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/createTicketCommand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/normalMailClassifierRule"/>
+        <NamedIndividual IRI="#normalMail"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/spamMailClassifierRule"/>
+        <NamedIndividual IRI="#spamMail"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
+        <NamedIndividual IRI="#normalMail"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/createTicketCommand"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
+        <NamedIndividual IRI="#suspiciousMailClassifierRule"/>
+        <NamedIndividual IRI="#suspiciousMail"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#serviceUrl"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/createTicketCommand"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">http://www.service.example.com</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://webprotege.stanford.edu/hasText"/>
+        <NamedIndividual IRI="http://webprotege.stanford.edu/normalMailClassifierRule"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">normal mail pattern</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://webprotege.stanford.edu/tagName"/>
         <NamedIndividual IRI="http://webprotege.stanford.edu/pictureTag"/>
@@ -241,12 +326,22 @@
     <DataPropertyAssertion>
         <DataProperty IRI="http://webprotege.stanford.edu/hasText"/>
         <NamedIndividual IRI="http://webprotege.stanford.edu/spamMailClassifierRule"/>
-        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">testText</Literal>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">spam text</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://webprotege.stanford.edu/tagName"/>
         <NamedIndividual IRI="http://webprotege.stanford.edu/urlTag"/>
         <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">a</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://webprotege.stanford.edu/hasText"/>
+        <NamedIndividual IRI="#suspiciousMailClassifierRule"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">suspicious mail classifier rule</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://webprotege.stanford.edu/hasText"/>
+        <NamedIndividual IRI="#ticketName"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">ticket-123</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="http://webprotege.stanford.edu/relatedTo"/>
@@ -415,5 +510,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 4.2.1.20160306-0033) https://github.com/owlcs/owlapi -->
 

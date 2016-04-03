@@ -2,7 +2,9 @@ package classifier;
 
 import model.Mail;
 
+import java.util.List;
+
 public interface MailClassifier {
 
-    String classify(Mail mail);
+    List<String> classify(Mail mail);
 }
