@@ -24,19 +24,16 @@ public class MailClassifierAgent implements MailClassifier {
 
     private OWLOntology ontology;
     private DLQueryEngine dlQueryEngine;
-    private OWLOntologyManager manager;
-    private OWLDataFactory factory;
     private OWLDataProperty hasText;
     private OWLObjectProperty relatedTo;
 
-    final private String prefix = "http://webprotege.stanford.edu/";
-
+    private String prefix = "http://webprotege.stanford.edu/";
     private String ruleExpression = "mailClassifierRule";
     private String relatedToName = "relatedTo";
 
     public MailClassifierAgent(OWLOntology ontology) {
-        manager = OWLManager.createOWLOntologyManager();
-        factory = manager.getOWLDataFactory();
+        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+        OWLDataFactory factory = manager.getOWLDataFactory();
         hasText = factory.getOWLDataProperty(IRI.create(prefix, "hasText"));
         relatedTo = factory.getOWLObjectProperty(IRI.create(prefix, relatedToName));
         OWLReasoner reasoner = createReasoner(ontology);
@@ -81,10 +78,6 @@ public class MailClassifierAgent implements MailClassifier {
 
     private boolean searchInText(String rule, String text) {
         return text.contains(rule);
-    }
-
-    private Collection<OWLNamedIndividual> getMailType(OWLNamedIndividual individual, String property) {
-        return dlQueryEngine.getRelated(individual, property);
     }
 
     private Set<String> invokeCommandByMailType(OWLIndividual individual) {
