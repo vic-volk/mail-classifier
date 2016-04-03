@@ -42,6 +42,7 @@ public class MailClassifierAgent implements MailClassifier {
         this.ontology = ontology;
     }
 
+    //Main classification method. Working with the ontology.
     public List<String> classify(Mail mail) {
         //Get classification rules
         Set<OWLNamedIndividual> individuals = dlQueryEngine.getInstances(ruleExpression, true);
