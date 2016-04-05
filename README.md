@@ -12,7 +12,7 @@ Entities:
 
 It helps classify mail by using rules and relations with mail-types.
 
-OWL file: [Mail agent ontology](../blob/master/src/main/owl/root-ontology.owx)
+OWL file: [Mail agent ontology](../master/src/main/owl/root-ontology.owx)
 
 Classifier Agent implementation: [Classifier Agent](../master/src/main/java/classifier/MailClassifierAgent.java)
 
